@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     image: mysql
-    container_name: db_symblog_youtube
+    container_name: db_symblog
     restart: always
     volumes:
       - db-data:/var/lib/mysql
@@ -14,7 +14,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
-    container_name: phpmyadmni_symblog_youtube
+    container_name: phpmyadmni_symblog
     restart: always
     depends_on:
       - db
@@ -27,7 +27,7 @@ services:
 
   www:
     build: docker
-    container_name: www_symblog_youtube
+    container_name: www_symblog
     restart: always
     ports:
       - "8000:80"
